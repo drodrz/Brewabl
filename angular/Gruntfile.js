@@ -34,8 +34,11 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/assets/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/assets/less/**/*.less'],
+        tasks: ['less'],
+        options: {
+          nospawn: true
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -50,6 +53,26 @@ module.exports = function (grunt) {
           '.tmp/assets/css/{,*/}*.css',
           '<%= yeoman.app %>/assets/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+    less: {
+      development: {
+        options: {
+          paths: ["assets/css"]
+        },
+        files: {
+          "assets/css/brewabl.css": "assets/less/brewabl.less"
+        }
+      },
+      production: {
+        options: {
+          paths: ["assets/css"],
+          cleancss: true
+        },
+        files: {
+          "assets/css/brewabl.css": "assets/less/brewabl.less"
+        }
       }
     },
 
