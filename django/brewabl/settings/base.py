@@ -12,13 +12,12 @@ from os.path import dirname, join, exists
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(__file__)))
+ROOT_DIR = dirname(BASE_DIR)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
-STATIC_ROOT = join(BASE_DIR, 'static-www')
 STATIC_URL = '/static/'
-MEDIA_ROOT = join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
 # Use Django templates using the new Django 1.8 TEMPLATES settings
@@ -78,10 +77,10 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'gunicorn',
     'rest_framework',
 
-    #'recipes',
+    'accounts',
+    'recipes',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,8 +94,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 SITE_ID = 1
-ROOT_URLCONF = 'brewabl-site.urls'
-WSGI_APPLICATION = 'brewabl-site.wsgi.application'
+ROOT_URLCONF = 'brewabl.urls'
+WSGI_APPLICATION = 'brewabl.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -115,11 +114,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Authentication Settings
-# AUTH_USER_MODEL = 'allauth.User'
-# LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
-# LOGIN_URL = reverse_lazy("accounts:login")
-
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+AUTH_USER_MODEL = 'accounts.User'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -128,7 +123,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 REST_FRAMEWORK = {
     'DEFAULT_MODEL_SERIALIZER_CLASS': 'rest_framework.serializers.HyperlinkedModelSerializer',
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 50
 }
 
 # Email config

@@ -2,26 +2,29 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth.decorators import login_required
-
-import allauth
-from views import HomePage
 
 from django.conf.urls import url, include
 from rest_framework import routers
-# from recipes.views import EventViewSet
+from accounts.views import UserViewSet, ProfileViewSet
+from recipes.views import FermentableViewSet, HopViewSet, YeastViewSet, MiscViewSet, WaterProfileViewSet, \
+    RecipeViewSet
 
-# router = routers.DefaultRouter()
-# router.register(r'event', EventViewSet)
+router = routers.DefaultRouter()
+router.register(r'fermentables', FermentableViewSet)
+router.register(r'hops', HopViewSet)
+router.register(r'yeast', YeastViewSet)
+router.register(r'waterprofiles', MiscViewSet)
+router.register(r'recipes', WaterProfileViewSet)
+router.register(r'recipes', RecipeViewSet)
+
+user_router = routers.DefaultRouter()
+user_router.register(r'user', UserViewSet)
 
 urlpatterns = [
-    url(r'^$', HomePage.as_view()),
-
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^docs/', include('rest_framework_swagger.urls')),
-
-    url(r'^accounts/', include('allauth.urls')),
+    url(r'^api/docs/', include('rest_framework_swagger.urls')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/', include(user_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

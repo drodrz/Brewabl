@@ -1,9 +1,8 @@
-Django>=1.8.4
+Django>=1.8.5
 django-environ>=0.3.0
-django-braces>=1.8.0
-django-crispy-forms>=1.4.0
 django-admin-bootstrapped>=2.4.0
-django-authtools>=1.2.0
 djangorestframework>=3.2.3
-wheel==0.24.0
+django-allauth>=0.23.0
+django-rest-auth>=0.5.0
 drf-nested-routers>=0.10.0
+pillow>=3.0.0
