@@ -81,6 +81,8 @@ INSTALLED_APPS = (
     'rest_framework.authtoken',
     'rest_auth',
     'rest_auth.registration',
+
+    'corsheaders',
     'gunicorn',
 
     'accounts',
@@ -89,6 +91,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -139,6 +142,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGE_SIZE': 50
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Email config
 try:
