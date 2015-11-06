@@ -6,3 +6,5 @@ django-allauth>=0.23.0
 django-rest-auth>=0.5.0
 drf-nested-routers>=0.10.0
 pillow>=3.0.0
+gunicorn>=19.3.0
+django-cors-headers>=1.1.0
