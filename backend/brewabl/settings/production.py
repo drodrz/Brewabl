@@ -9,7 +9,9 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 # Must mention ALLOWED_HOSTS in production!
 ALLOWED_HOSTS = ["drodrz.webfactional.com",
-                 "webfactional.com"]
+                 "webfactional.com",
+                 "www.brewabl.com",
+                 "brewabl.com"]
 
 # Cache the templates in memory for speed-up
 loaders = [(
@@ -23,8 +25,8 @@ TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0].update({"APP_DIRS": False})
 
 # Define STATIC_ROOT for the collectstatic command
-STATIC_ROOT = join(BASE_DIR, 'static-www')
-MEDIA_ROOT = join(BASE_DIR, 'media')
+STATIC_ROOT = '/home/drodrz/webapps/brewabl_static/'
+MEDIA_ROOT = '/home/drodrz/webapps/brewabl_media/'
 
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
