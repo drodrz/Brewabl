@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^api/docs/', include('rest_framework_swagger.urls')),
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/', include(user_router.urls)),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

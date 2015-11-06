@@ -2,7 +2,12 @@
     <div ng-if="complete == false">
         <form role="form" ng-if="authenticated" name="userProfileForm" ng-submit="updateProfile(userProfileForm, model)" novalidate>
             <div class="form-group">
-                <label for="id_name">First Name</label>
+                <label for="id_username">Username</label>
+                <input name="username" id="id_username" class="form-control" type="text" ng-model="model.username" placeholder="Username" />
+            </div>
+            <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
+            <div class="form-group">
+                <label for="id_name">Name</label>
                 <input name="name" id="id_name" class="form-control" type="text" ng-model="model.name" placeholder="Name" />
             </div>
             <div class="alert alert-danger" ng-repeat="error in errors.name">{{error}}</div>

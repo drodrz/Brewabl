@@ -77,7 +77,12 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
     'rest_framework',
+    'rest_framework.authtoken',
+
+    'rest_auth',
+    'rest_auth.registration',
 
     'accounts',
     'recipes',
@@ -118,6 +123,16 @@ AUTH_USER_MODEL = 'accounts.User'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_FORMS = {
+    'signup': 'accounts.forms.SignupForm'
+}
+
+REST_AUTH_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'accounts.serializers.LoginSerializer',
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.UserSerializer',
+}
+
 
 # Django Rest Framework config
 REST_FRAMEWORK = {
