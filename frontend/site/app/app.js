@@ -103,5 +103,5 @@ var brewablApp = angular.module('brewablApp', [
             .otherwise({redirectTo: '/'});
     })
     .run(function(djangoAuth){
-        djangoAuth.initialize('//127.0.0.1:8000/rest-auth', false);
+        djangoAuth.initialize('/rest-auth', false);
     });
