@@ -9,13 +9,7 @@
 @site-color3: #6e9075; //rgba(110, 144, 117, 100)
 @site-color4: #78c091; //rgba(120, 192, 145, 100)
 @site-color5: #81f0e5; //rgba(129, 240, 229, 100)
-@site-text: #ddd;
-
-//.navbar-site {
-//  text-color : @text-color;
-//  background-color : @site-color5;
-//  border-radius:0px;
-//}
+@site-text: whitesmoke;
 
 #navbar-site-id.navbar-default .navbar-brand {
   color: @site-text;
@@ -26,13 +20,13 @@
 
 #navbar-site-id.navbar-default {
   font-size: 14px;
-  background-color: @site-color1;
+  background-color: @site-color2;
   border-width: 0px;
   border-radius: 0px;
 }
 #navbar-site-id.navbar-default .navbar-nav>li>a {
   color: @site-text;
-  background-color: @site-color1;
+  background-color: @site-color2;
 }
 #navbar-site-id.navbar-default .navbar-nav>li>a:hover,
 #navbar-site-id.navbar-default .navbar-nav>li>a:focus {
@@ -53,18 +47,21 @@
   background-color: @site-color4;
 }
 #navbar-site-id.navbar-default .navbar-toggle .icon-bar {
-  background-color: @site-color1;
+  background-color: @site-color2;
 }
 #navbar-site-id.navbar-default .navbar-toggle:hover .icon-bar,
 #navbar-site-id.navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: @site-color1;
+  background-color: @site-color2;
 }
 
 .corporate-jumbo {
-  background: url(assets/img/cover.jpg) no-repeat;
-  background-position: center;
+  background: url(/assets/img/cover.jpg) no-repeat center center fixed;
   background-size: cover;
-  position:relative;
-  width:100%;
-  height:100%;
+  height: calc(100vh - 50px);
+  margin-bottom: 0px;
+}
+
+body {
+  font-family: 'Roboto', serif;
+  font-size: 16px;
 }

@@ -51,8 +51,8 @@ class LoginSerializer(serializers.Serializer):
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
-        fields = ('user', 'url', 'picture', 'location', 'email_verified')
-        read_only_fields = ('user', 'url', 'email_verified' )
+        fields = ('pk', 'user', 'url', 'picture', 'location', 'email_verified')
+        read_only_fields = ('pk', 'user', 'url', 'email_verified' )
         rw_fields = tuple(set(fields)-set(read_only_fields))
 
     def update(self, instance, validated_data):

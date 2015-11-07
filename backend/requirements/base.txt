@@ -3,7 +3,8 @@ django-environ>=0.3.0
 django-admin-bootstrapped>=2.4.0
 djangorestframework>=3.2.3
 django-allauth>=0.23.0
-django-rest-auth>=0.5.0
+#django-rest-auth==0.4.0   https://github.com/Tivix/django-rest-auth.git
+git+https://github.com/Tivix/django-rest-auth@315f6f2844ec1a6db22875fc84ad400f324fface
 drf-nested-routers>=0.10.0
 pillow>=3.0.0
 gunicorn>=19.3.0

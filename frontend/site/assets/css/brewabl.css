@@ -9,13 +9,14 @@
 }
 
 #navbar-site-id.navbar-default .navbar-brand {
+  font-size: 18px;
   color: whitesmoke;
 }
 #navbar-site-id.navbar-default .navbar-brand > a:hover {
   background-color: #78c091;
 }
 #navbar-site-id.navbar-default {
-  font-size: 14px;
+  font-size: 16px;
   background-color: #4E342E;
   border-width: 0px;
   border-radius: 0px;
@@ -52,10 +53,12 @@
 
 .corporate-jumbo {
   background: url(/assets/img/cover.jpg) no-repeat center center fixed;
-  background-position: center;
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   height: calc(100vh - 50px);
   margin-bottom: 0px;
+}
+
+body {
+  font-family: 'Roboto', serif;
+  font-size: 16px;
 }

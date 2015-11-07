@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('brewablApp')
-  .controller('RegisterCtrl', function ($scope, djangoAuth, Validate) {
+  .controller('RegisterCtrl', function ($scope, djangoAuth, Validate, ngDialog) {
   	$scope.model = {'name':'','email':'','password':''};
   	$scope.complete = false;
     $scope.register = function(formData){

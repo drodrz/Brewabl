@@ -3,6 +3,7 @@ var brewablApp = angular.module('brewablApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ngDialog',
 ])
     .config(function($httpProvider, $interpolateProvider, $routeProvider) {
         $httpProvider.defaults.xsrfCookieName = 'csrftoken';
@@ -12,14 +13,6 @@ var brewablApp = angular.module('brewablApp', [
             when("/", {
                 templateUrl: "/app/components/home/homeView.html",
                 controller: "homeController",
-                resolve: {
-                    authenticated: ['djangoAuth', function(djangoAuth){
-                        return djangoAuth.authenticationStatus();
-                    }],
-                }
-            })
-            .when('/register', {
-                templateUrl: 'app/components/auth/views/register.html',
                 resolve: {
                     authenticated: ['djangoAuth', function(djangoAuth){
                         return djangoAuth.authenticationStatus();
@@ -42,24 +35,8 @@ var brewablApp = angular.module('brewablApp', [
                     }],
                 }
             })
-            .when('/login', {
-                templateUrl: 'app/components/auth/views/login.html',
-                resolve: {
-                    authenticated: ['djangoAuth', function(djangoAuth){
-                        return djangoAuth.authenticationStatus();
-                    }],
-                }
-            })
             .when('/verifyEmail/:emailVerificationToken', {
                 templateUrl: 'app/components/auth/views/verifyemail.html',
-                resolve: {
-                    authenticated: ['djangoAuth', function(djangoAuth){
-                        return djangoAuth.authenticationStatus();
-                    }],
-                }
-            })
-            .when('/logout', {
-                templateUrl: 'app/components/auth/views/logout.html',
                 resolve: {
                     authenticated: ['djangoAuth', function(djangoAuth){
                         return djangoAuth.authenticationStatus();

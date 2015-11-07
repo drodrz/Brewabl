@@ -1,0 +1,45 @@
+<div ng-controller="RegisterCtrl">
+    <div ng-if="complete == false">
+        <h1>Register for Brewabl</h1>
+        <form role="form" ng-if="authenticated != true" name="registerForm" ng-submit="register(registerForm)" novalidate>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                    <input name="name" id="id_name" class="form-control" type="text" ng-model="model.name" placeholder="Your Name" required />
+                </div>
+                <div class="alert alert-danger" ng-repeat="error in errors.name">{{error}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                    <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email" placeholder="your@email.com" required/>
+                </div>
+                <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                    <input name="password1" id="id_password1" class="form-control" type="password" ng-model="model.password1" placeholder="Password" required />
+                </div>
+                <div class="alert alert-danger" ng-repeat="error in errors.password1">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                    <input name="password2" id="id_password2" class="form-control" type="password" ng-model="model.password2" placeholder="Repeat Password" required />
+                </div>
+                <div class="alert alert-danger" ng-repeat="error in errors.password2">{{error}}</div>
+            </div>
+
+            <div class="alert alert-danger" ng-repeat="error in errors.__all__">{{error}}</div>
+            <button ng-hide="authenticated" type="submit" class="btn btn-signup textWhite bgPurple">Register</button>
+        </form>
+        <p ng-if="authenticated">You are already logged in!  You don't need to register.</p>
+    </div>
+    <div ng-if="complete == true">
+        <div class="alert alert-success">Welcome to Brewabl!</div>
+        <button type="submit" class="btn btn-signup textWhite bgPurple close-this-dialog" ng-click="closeThisDialog()">Thanks!</button>
+    </div>
+</div>

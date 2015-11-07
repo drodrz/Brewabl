@@ -47,7 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = 'auth_user'
         # abstract = True
-        ordering = ['username', 'name', 'email']
+        ordering = ['name', 'email']
         swappable = 'AUTH_USER_MODEL'
         verbose_name = 'user'
         verbose_name_plural = 'users'
@@ -74,6 +74,3 @@ class Profile(models.Model):
 
     location = models.CharField("Location", max_length=200, blank=True, null=True)
     email_verified = models.BooleanField("Email verified", default=False)
-
-    def __str__(self):
-        return "%s's profile".format(self.user)

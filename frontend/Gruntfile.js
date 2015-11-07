@@ -62,7 +62,7 @@ module.exports = function (grunt) {
           paths: ["assets/css"]
         },
         files: {
-          "assets/css/brewabl.css": "assets/less/brewabl.less"
+          "site/assets/css/brewabl.less": "site/assets/less/brewabl.less"
         }
       },
       production: {
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           cleancss: true
         },
         files: {
-          "assets/css/brewabl.css": "assets/less/brewabl.less"
+          "site/assets/css/brewabl.css": "site/assets/less/brewabl.css"
         }
       }
     },

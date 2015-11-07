@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('brewablApp')
-  .controller('LogoutCtrl', function ($scope, $location, djangoAuth) {
+  .controller('LogoutCtrl', function ($scope, $location, djangoAuth, ngDialog) {
     djangoAuth.logout();
   });
