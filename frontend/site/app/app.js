@@ -19,6 +19,10 @@ var brewablApp = angular.module('brewablApp', [
                     }],
                 }
             })
+            .when('/calculators', {
+                templateUrl: "/app/components/abvcalc/abvcalcView.html",
+                controller: "abvcalcController"
+            })
             .when('/passwordReset', {
                 templateUrl: 'app/components/auth/views/passwordreset.html',
                 resolve: {

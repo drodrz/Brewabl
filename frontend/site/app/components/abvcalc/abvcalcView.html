@@ -1,0 +1,21 @@
+<div class="abvcalc">
+    <div class="form-inline">
+        <label for="ogInput" class="control-label">OG</label>
+        <div class="form-group">
+            <input type="number" class="form-control" name="ogInput" ng-model="og" min="0" max="2.0"
+                   ng-pattern="/^[0-9]+(\.[0-9]+)?$/" ng-change="calcAbv()" step="0.001" required />
+        </div>
+    </div>
+
+    <div class="form-inline">
+        <label for="fgInput" class="control-label">FG</label>
+        <div class="form-group">
+            <input type="number" class="form-control" name="fgInput" ng-model="fg" min="0" max="2.0"
+                   ng-pattern="/^[0-9]+(\.[0-9]+)?$/" ng-change="calcAbv()" step="0.001" required />
+        </div>
+    </div>
+
+    <div class="form-inline" >
+        <label for="abvDisplay" class="control-label">ABV: {{abv | number:2}}%</label>
+    </div>
+</div>
