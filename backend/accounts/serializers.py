@@ -10,7 +10,7 @@ User = get_user_model()
 
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.EmailField(required=True, allow_blank=True)
+    username = serializers.EmailField(required=False, allow_blank=True)
     email = serializers.EmailField(required=True, allow_blank=False)
     password = serializers.CharField(style={'input_type': 'password'})
 
